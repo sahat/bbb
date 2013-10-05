@@ -1,0 +1,7 @@
+<span class="album-title"><%= title %></span>
+<span class="artist-name"><%= artist %></span>
+<ol class="tracks">
+  <% _.each(tracks, function(track) { %>
+    <li><%= track.title %></li>
+  <% }); %>
+</ol>
