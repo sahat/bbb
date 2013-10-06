@@ -1,5 +1,4 @@
 module.exports = function(grunt) {
-  "use strict";
 
   grunt.initConfig({
     // Wipe out previous builds and test reporting.
@@ -13,16 +12,12 @@ module.exports = function(grunt) {
     requirejs: {
       release: {
         options: {
-          mainConfigFile: "app/config.js",
+          mainConfigFile: "app/main.js",
           generateSourceMaps: true,
           include: ["main"],
           insertRequire: ["main"],
           out: "dist/source.min.js",
           optimize: "uglify2",
-
-          // Since we bootstrap with nested `require` calls this option allows
-          // R.js to find them.
-          findNestedDependencies: true,
 
           // Include a minimal AMD implementation shim.
           name: "almond",
@@ -134,12 +129,10 @@ module.exports = function(grunt) {
         browsers: ["PhantomJS"],
 
         // Change this to the framework you want to use.
-        frameworks: ["mocha"],
+        frameworks: ["jasmine"],
 
         plugins: [
           "karma-jasmine",
-          "karma-mocha",
-          "karma-qunit",
           "karma-phantomjs-launcher",
           "karma-coverage"
         ],
@@ -155,7 +148,6 @@ module.exports = function(grunt) {
 
         files: [
           // You can optionally remove this or swap out for a different expect.
-          "vendor/bower/chai/chai.js",
           "vendor/bower/requirejs/require.js",
           "test/runner.js",
 
@@ -220,6 +212,6 @@ module.exports = function(grunt) {
     "copy",
     "requirejs",
     "styles",
-    "cssmin",
+    "cssmin"
   ]);
 };
