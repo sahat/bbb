@@ -2,8 +2,9 @@ define([
   'underscore',
   'jquery',
   'backbone',
-  'text!templates/example.html'
-], function(_, $, Backbone, tpl) {
+  'text!templates/example.html',
+  'collections/collection'
+], function(_, $, Backbone, tpl, MyCollection) {
   var MyView = Backbone.View.extend({
     template: _.template(tpl),
 
@@ -12,11 +13,11 @@ define([
     },
 
     initialize: function() {
-
+      this.collection = new MyCollection();
     },
 
     render: function() {
-      this.$el.html(this.template(this.model.toJSON()));
+      this.$el.html(this.template(this.collection.toJSON()));
       return this;
     }
   });
