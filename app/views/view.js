@@ -1,24 +1,26 @@
-// Boilerplate
 define([
   'underscore',
   'jquery',
   'backbone',
-  'text!templates/project/list.html'
+  'text!templates/example.html'
 ], function(_, $, Backbone, tpl) {
 
-  var ProjectListView = Backbone.View.extend({
-    el: $('#container'),
+  var MyView = Backbone.View.extend({
+    template: _.template(tpl),
+
+    events: {
+
+    },
 
     initialize: function() {
 
     },
 
     render: function() {
-      var compiledTemplate = _.template(tpl, {});
-      this.$el.html(compiledTemplate);
+      this.$el.html(this.template(this.model.toJSON()));
       return this;
     }
   });
 
-  return ProjectListView;
+  return MyView;
 });
