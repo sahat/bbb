@@ -1,5 +1,16 @@
 define(function(require) {
-  "use strict";
+  var Backbone = require("backbone");
+  var Router = require("router");
+
+  describe("Application Router", function() {
+    it("exists", function() {
+      expect(Router).toBeTruthy();
+    });
+
+    it("is a Backbone.Router", function() {
+      expect(Router.prototype instanceof Backbone.Router).toBe(true);
+    });
+  });
 
   describe("one tautology", function() {
     it("is a tautology", function() {
