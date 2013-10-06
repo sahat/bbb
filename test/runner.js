@@ -26,7 +26,7 @@
   });
 
   require([
-    "config",
+    "main",
     "underscore"
   ],
 
