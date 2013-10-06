@@ -2,6 +2,7 @@
   "name": "backbone-boilerplate",
 
   "dependencies": {
+    "bootstrap": "~3.0.0",
     "html5-boilerplate": "~4.3.0",
     "almond": "~0.2.6",
     "lodash": "~2.2.0",
