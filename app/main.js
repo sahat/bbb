@@ -18,6 +18,8 @@ require.config({
   }
 });
 
+console.log('test');
+
 require(['app', 'router'], function(app, Router) {
   app.router = new Router();
 
